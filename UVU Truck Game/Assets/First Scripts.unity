@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 1749809818}
   - component: {fileID: 1749809819}
   - component: {fileID: 1749809820}
+  - component: {fileID: 1749809821}
   m_Layer: 0
   m_Name: Thing
   m_TagString: Untagged
@@ -450,3 +451,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   turnSpeed: 50
+--- !u!114 &1749809821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749809806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099b01a23cf70405e9d41194ebd5c385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1749809808}
