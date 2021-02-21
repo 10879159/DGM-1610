@@ -327,6 +327,9 @@ GameObject:
   - component: {fileID: 1749809822}
   - component: {fileID: 1749809823}
   - component: {fileID: 1749809824}
+  - component: {fileID: 1749809827}
+  - component: {fileID: 1749809826}
+  - component: {fileID: 1749809825}
   m_Layer: 0
   m_Name: Thing
   m_TagString: Untagged
@@ -598,3 +601,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61bebad60b1e4ac5933bc2079a7eedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1749809825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749809806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb32490db8b748aa984ab29340f84de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfPlayerDeaths: 3
+--- !u!114 &1749809826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749809806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f0337554e4a41b28b42b3d8e45ecb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScore: 9001
+--- !u!114 &1749809827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749809806}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669f521d6ddf9473a9abe0d2f996f787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherGameObject: {fileID: 0}
