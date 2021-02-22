@@ -6,6 +6,6 @@ public class Rocket_Destruction : MonoBehaviour
 {
     void Start()
     {
-        Destroy (gameObject, 1.5f);
+        Destroy (gameObject, 10.5f);
     }
 }
