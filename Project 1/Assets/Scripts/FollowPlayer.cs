@@ -12,10 +12,11 @@ public class FollowPlayer : MonoBehaviour
     }
 
     public GameObject player;
+    private Vector3 offset = new Vector3(0, 15, -15);
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(0, 15, -15);
+        transform.position = player.transform.position + offset;
     }
 }
