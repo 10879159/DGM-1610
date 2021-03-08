@@ -18,6 +18,7 @@ public class Teleport_Away : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+	UpdateScore.AddScore();
 	transform.position = new Vector3(Random.Range(-BoxSize.boxSize, BoxSize.boxSize), Random.Range(-BoxSize.boxSize, BoxSize.boxSize), 0);
     }
 }

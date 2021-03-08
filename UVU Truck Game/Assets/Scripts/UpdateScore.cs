@@ -7,7 +7,7 @@ public class UpdateScore : MonoBehaviour
 {
     public Text ScoreValue;
 
-    private int score = 0;
+    private static int score = 0;
 
     // Use this for initialization
     void Start () {
@@ -19,7 +19,8 @@ public class UpdateScore : MonoBehaviour
         ScoreValue.text = "" + score;
     }
 
-    void OnTriggerEnter(Collider other) {
+    public static void AddScore()
+    {
         score = score + 1;
     }
 }
