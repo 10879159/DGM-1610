@@ -7,14 +7,17 @@ public class Teleport_Away : MonoBehaviour
 {
     public BoxCollider collisioner;
 
+    private FrontBack BoxSize;
+
     // Start is called before the first frame update
     void Awake ()
     {
-        collisioner = collisioner.GetComponent<BoxCollider>();
+        BoxSize = GetComponent<FrontBack>();
+	collisioner = collisioner.GetComponent<BoxCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-	transform.position = new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), 0);
+	transform.position = new Vector3(Random.Range(-BoxSize.boxSize, BoxSize.boxSize), Random.Range(-BoxSize.boxSize, BoxSize.boxSize), 0);
     }
 }

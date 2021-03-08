@@ -5,7 +5,8 @@ using UnityEngine;
 public class FrontBack : MonoBehaviour
 {
 	public float frontBack = 1f;
-	public float boxSize = 4.75f;
+	public float boxSize = 4f;
+
     // Update is called once per frame
     void Update()
     {
