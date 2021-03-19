@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 leftBound;
     private Vector3 rightBound;
+    private Vector3 fixTheBone;
 
     // Start is called before the first frame update
     void Start()
     {
 	leftBound = new Vector3(-xRange, transform.position.y, transform.position.z);
-	rightBound = new Vector3(xRange, transform.position.y, transform.position.z);        
+	rightBound = new Vector3(xRange, transform.position.y, transform.position.z);
+	fixTheBone = new Vector3(0f, 1.5f, -5f);
     }
 
     // Update is called once per frame
@@ -35,7 +37,8 @@ public class PlayerController : MonoBehaviour
 	// Get Space Input
 	if (Input.GetKeyDown(KeyCode.Space)) {
 		// Launch Projectile
-		Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+		// Debug.Log(transform.position);
+		Instantiate(projectilePrefab, transform.position + fixTheBone, projectilePrefab.transform.rotation);
 	}
     }
 }
