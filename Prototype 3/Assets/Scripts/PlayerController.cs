@@ -11,13 +11,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody PlayerRB;
     private Animator playerAnim;
+    private Vector3 airDeath;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerRB = GetComponent<Rigidbody>();
+	PlayerRB = GetComponent<Rigidbody>();
 	Physics.gravity *= gravityModifier;
 	playerAnim = GetComponent<Animator>();
+	airDeath = new Vector3(10, 1, 0);
     }
 
     // Update is called once per frame
@@ -36,6 +38,13 @@ public class PlayerController : MonoBehaviour
 		isOnGround = true;
 	} else if (collision.gameObject.CompareTag("Obstacle")) {
 		gameOver = true;
+		playerAnim.SetBool("Death_b", true);
+		if (isOnGround) {
+			playerAnim.SetInteger("DeathType_int", 1);
+		} else {
+			playerAnim.SetInteger("DeathType_int", 2);
+			PlayerRB.AddForce(airDeath * 200, ForceMode.Impulse);
+		}
 		Debug.Log("Game Over!");
 	}
     }
