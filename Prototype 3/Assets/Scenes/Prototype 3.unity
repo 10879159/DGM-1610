@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153d4da18c9c04b26be12ffb017f22b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftBound: -15
 --- !u!114 &835818923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +415,7 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 3789996626472272571, guid: 360b8647b32f44d33a6546844d130077,
     type: 3}
   startDelay: 2
-  repeatRate: 1
+  repeatRate: 2
 --- !u!4 &1003887833
 Transform:
   m_ObjectHideFlags: 0
@@ -536,6 +537,7 @@ MonoBehaviour:
   jumpForce: 1800
   gravityModifier: 1.8
   isOnGround: 1
+  gameOver: 0
 --- !u!1 &2014335011
 GameObject:
   m_ObjectHideFlags: 0
