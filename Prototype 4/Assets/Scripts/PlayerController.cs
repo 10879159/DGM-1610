@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody PlayerRb;
     private GameObject focalPoint;
+    private SpawnManagerScript spawnManager;
 
     public float speed = 5.0f;
     public bool hasPowerUp = false;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerRb = GetComponent<Rigidbody>();
 	focalPoint = GameObject.Find("FocalPoint");
+	spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManagerScript>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
 	if (other.CompareTag("Powerup")) {
 		hasPowerUp = true;
 		Destroy(other.gameObject);
+		spawnManager.powerUpInPlay = false;
 	}
     }
 

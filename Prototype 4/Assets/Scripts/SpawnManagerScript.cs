@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManagerScript : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject powerUpPrefab;
     public float spawnRate = 1.0f;
+    public bool powerUpInPlay = false;
 
     private float spawnRange = 9.0f;
+    private PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
     {
+	playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 	InvokeRepeating("SpawnEnemy", 2.0f, spawnRate);
     }
 
@@ -23,6 +27,11 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy() {
 	Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+	if (!powerUpInPlay && !playerController.hasPowerUp) {
+		Instantiate(powerUpPrefab, GenerateSpawnPosition(), powerUpPrefab.transform.rotation);
+		powerUpInPlay = true;
+		Debug.Log("Powerup spawned!");
+	}
     }
 
     private Vector3 GenerateSpawnPosition() {

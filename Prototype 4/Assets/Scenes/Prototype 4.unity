@@ -222,7 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 849376114618127462, guid: 035bc92d6e6de49598d1676aae291e87,
     type: 3}
+  powerUpPrefab: {fileID: 8309897677087162266, guid: 18ea455cb136648fb8c0fcbb9dc7f253,
+    type: 3}
   spawnRate: 5
+  powerUpInPlay: 0
 --- !u!4 &248427899
 Transform:
   m_ObjectHideFlags: 0
@@ -361,6 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   hasPowerUp: 0
+  powerUpStrength: 15
 --- !u!114 &1078367092
 MonoBehaviour:
   m_ObjectHideFlags: 0
