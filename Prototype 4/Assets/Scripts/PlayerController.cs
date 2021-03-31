@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody PlayerRb;
     private GameObject focalPoint;
     private SpawnManagerScript spawnManager;
+    private Vector3 downALittle;
 
     public float speed = 5.0f;
     public bool hasPowerUp = false;
     public float powerUpStrength = 15.0f;
+    public GameObject powerUpIndicator;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
         PlayerRb = GetComponent<Rigidbody>();
 	focalPoint = GameObject.Find("FocalPoint");
 	spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManagerScript>();
+	downALittle = new Vector3(0, -0.5f, 0);
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
 	PlayerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+	powerUpIndicator.transform.position = transform.position + downALittle;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -33,12 +37,14 @@ public class PlayerController : MonoBehaviour
 		Destroy(other.gameObject);
 		spawnManager.powerUpInPlay = false;
 		StartCoroutine(PowerupCountdownRoutine());
+		powerUpIndicator.gameObject.SetActive(true);
 	}
     }
 
     IEnumerator PowerupCountdownRoutine() {
 	yield return new WaitForSeconds(7);
 	hasPowerUp = false;
+	powerUpIndicator.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision) {
