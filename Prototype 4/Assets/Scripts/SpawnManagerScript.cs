@@ -11,10 +11,14 @@ public class SpawnManagerScript : MonoBehaviour
 
     private float spawnRange = 9.0f;
     private int waveSize = 1;
+    private GameOver gameOverScript;
+    private GameObject PlayerObject;
 
     // Start is called before the first frame update
     void Start()
     {
+	PlayerObject = GameObject.Find("Player");
+	gameOverScript = PlayerObject.GetComponent<GameOver>();
 	InvokeRepeating("SpawnEnemy", 2.0f, spawnRate);
     }
 
@@ -25,14 +29,16 @@ public class SpawnManagerScript : MonoBehaviour
     }
 
     void SpawnEnemy() {
-	for(int i = 0; i < waveSize; i++) {
-		Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
-	}
-	waveSize++;
-	if (!powerUpInPlay) {
-		Instantiate(powerUpPrefab, GenerateSpawnPosition(), powerUpPrefab.transform.rotation);
-		powerUpInPlay = true;
-		Debug.Log("Powerup spawned!");
+	if (!gameOverScript.gameOver) {
+		for(int i = 0; i < waveSize; i++) {
+			Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+		}
+		waveSize++;
+		if (!powerUpInPlay) {
+			Instantiate(powerUpPrefab, GenerateSpawnPosition(), powerUpPrefab.transform.rotation);
+			powerUpInPlay = true;
+			//Debug.Log("Powerup spawned!");
+		}
 	}
     }
 

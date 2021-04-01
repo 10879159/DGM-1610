@@ -8,18 +8,22 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody enemyRb;
     private GameObject player;
+    private GameOver gameOverScript;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
 	player = GameObject.Find("Player");
+	gameOverScript = player.GetComponent<GameOver>();
     }
 
     // Update is called once per frame
     void Update()
     {
-	Vector3 lookDirection = (player.transform.position - transform.position).normalized;
-        enemyRb.AddForce(lookDirection * speed);
+	if (!gameOverScript.gameOver) {
+		Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        	enemyRb.AddForce(lookDirection * speed);
+	}
     }
 }
