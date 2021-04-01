@@ -6,16 +6,15 @@ public class SpawnManagerScript : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject powerUpPrefab;
-    public float spawnRate = 1.0f;
+    public float spawnRate = 20.0f;
     public bool powerUpInPlay = false;
 
     private float spawnRange = 9.0f;
-    private PlayerController playerController;
+    private int waveSize = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-	playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 	InvokeRepeating("SpawnEnemy", 2.0f, spawnRate);
     }
 
@@ -26,8 +25,11 @@ public class SpawnManagerScript : MonoBehaviour
     }
 
     void SpawnEnemy() {
-	Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
-	if (!powerUpInPlay && !playerController.hasPowerUp) {
+	for(int i = 0; i < waveSize; i++) {
+		Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+	}
+	waveSize++;
+	if (!powerUpInPlay) {
 		Instantiate(powerUpPrefab, GenerateSpawnPosition(), powerUpPrefab.transform.rotation);
 		powerUpInPlay = true;
 		Debug.Log("Powerup spawned!");

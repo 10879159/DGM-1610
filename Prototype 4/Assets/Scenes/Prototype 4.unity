@@ -224,7 +224,7 @@ MonoBehaviour:
     type: 3}
   powerUpPrefab: {fileID: 8309897677087162266, guid: 18ea455cb136648fb8c0fcbb9dc7f253,
     type: 3}
-  spawnRate: 5
+  spawnRate: 18
   powerUpInPlay: 0
 --- !u!4 &248427899
 Transform:
