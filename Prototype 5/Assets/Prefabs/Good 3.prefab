@@ -126,3 +126,4 @@ MonoBehaviour:
   maxTorque: 10
   xRange: 4
   ySpawnPos: -6
+  pointValue: 5

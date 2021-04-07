@@ -9,6 +9,7 @@ public class Target : MonoBehaviour
     public float maxTorque = 10f;
     public float xRange = 4f;
     public float ySpawnPos = -6f;
+    public int pointValue;
 
     private Rigidbody targetRb;
     private GameManager gameManager;
@@ -40,7 +41,7 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-	gameManager.UpdateScore(5);
+	gameManager.UpdateScore(pointValue);
 	Destroy(gameObject);
     }
 
