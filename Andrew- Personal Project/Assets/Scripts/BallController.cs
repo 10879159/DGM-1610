@@ -40,13 +40,10 @@ public class BallController : MonoBehaviour
 	} else if (collidee.gameObject.tag == "horizontalBoxPart") {
 		ballDirection = new Vector3(ballDirection.x, -ballDirection.y, ballDirection.z);
 	} else if (collidee.gameObject.tag == "Player") {
-		if (ballXSpeed > 0) {
-			ballXSpeed += 0.1f;
-		} else {
-			ballXSpeed -= 0.1f;
-		}
-		ballXSpeed = -ballXSpeed;
-		ballDirection = new Vector3(ballXSpeed, (transform.position.y - collidee.transform.position.y) / angleStrength, (transform.position.z - collidee.transform.position.z) / angleStrength);
+		ballDirection = new Vector3(-ballDirection.x, ballDirection.y, ballDirection.z);
+	} else if (collidee.gameObject.tag == "Enemy") {
+		ballDirection = new Vector3(-ballDirection.x, ballDirection.y, ballDirection.z);
+		Debug.Log("Touched Enemy!");
 	}
     }
 }

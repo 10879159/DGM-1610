@@ -6,6 +6,7 @@ TagManager:
   tags:
   - verticalBoxPart
   - horizontalBoxPart
+  - Enemy
   layers:
   - Default
   - TransparentFX
