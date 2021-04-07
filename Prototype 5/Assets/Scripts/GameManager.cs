@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
 
-    private float spawnRate = 5.0f;
+    public float spawnRate = 5.0f;
 
     // Start is called before the first frame update
     void Start()
