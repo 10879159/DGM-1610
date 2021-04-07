@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
+    public UnityEvent newBall;
+
     private Transform ballInfo;
 
     // Start is called before the first frame update
     void Start()
     {
-        ballInfo = GameObject.Find("Ball").transform;
+	newBall = GameObject.Find("SpawnManager").GetComponent<SpawnManager>().newBall;
+	newBall.AddListener(FindBall);
     }
 
     // Update is called once per frame
@@ -29,5 +33,11 @@ public class EnemyController : MonoBehaviour
 	if (transform.position.x != -50) {
 		transform.Translate(-50 - transform.position.x, 0, 0);
 	}
+    }
+
+    public void FindBall()
+    {
+	ballInfo = GameObject.Find("Ball(Clone)").transform;
+	//Debug.Log("I see the ball");
     }
 }

@@ -43,7 +43,6 @@ public class BallController : MonoBehaviour
 		ballDirection = new Vector3(-ballDirection.x, ballDirection.y, ballDirection.z);
 	} else if (collidee.gameObject.tag == "Enemy") {
 		ballDirection = new Vector3(-ballDirection.x, ballDirection.y, ballDirection.z);
-		Debug.Log("Touched Enemy!");
 	}
     }
 }

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ResetBall : MonoBehaviour
 {
-    public GameObject ballPrefab;
-    public bool newBall = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +14,6 @@ public class ResetBall : MonoBehaviour
     void Update()
     {
         if (transform.position.x > 51 || transform.position.x < -51) {
-		Instantiate(ballPrefab);
-		newBall = true;
 		Destroy(gameObject);
 	}
     }

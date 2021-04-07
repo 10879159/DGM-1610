@@ -1,27 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FollowBallX : MonoBehaviour
 {
+    public UnityEvent newBall;
+    public GameObject spawnManager;
+    public SpawnManager spawnManagerScript;
+
     private Transform ballInfo;
-    public ResetBall newBallScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        ballInfo = GameObject.Find("Ball").transform;
-	newBallScript = GameObject.Find("Ball").GetComponent<ResetBall>();
+	newBall = GameObject.Find("SpawnManager").GetComponent<SpawnManager>().newBall;
+	newBall.AddListener(FindBall);
     }
 
     // Update is called once per frame
     void Update()
     {
-	if (newBallScript.newBall) {
-		ballInfo = GameObject.Find("Ball").transform;
-		newBallScript = GameObject.Find("Ball").GetComponent<ResetBall>();
-		newBallScript.newBall = false;
-	}
         transform.Translate(ballInfo.position.x - transform.position.x, 0, 0);
+    }
+
+    public void FindBall()
+    {
+	ballInfo = GameObject.Find("Ball(Clone)").transform;
+	Debug.Log("New Ball! I Follow!");
     }
 }
