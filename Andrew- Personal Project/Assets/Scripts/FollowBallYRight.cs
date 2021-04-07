@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowBallY : MonoBehaviour
+public class FollowBallYRight : MonoBehaviour
 {
     private Transform ballInfo;
-
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +15,6 @@ public class FollowBallY : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(ballInfo.position.x - transform.position.x, 0, transform.position.y - ballInfo.position.y);
+        transform.Translate(transform.position.y - ballInfo.position.y, 0, 0);
     }
 }
