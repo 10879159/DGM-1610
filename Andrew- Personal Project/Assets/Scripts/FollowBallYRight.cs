@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StayX : MonoBehaviour
+public class FollowBallYRight : MonoBehaviour
 {
-    public float stayAtX;
+    private Transform ballInfo;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ballInfo = GameObject.Find("Ball").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x != stayAtX) {
-		transform.Translate(transform.position.x - stayAtX, 0, 0);
-	}
+        transform.Translate(transform.position.y - ballInfo.position.y, 0, 0);
     }
 }
