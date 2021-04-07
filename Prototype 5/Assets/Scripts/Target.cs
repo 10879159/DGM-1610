@@ -11,6 +11,7 @@ public class Target : MonoBehaviour
     public float ySpawnPos = -6f;
 
     private Rigidbody targetRb;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class Target : MonoBehaviour
 	targetRb.AddForce(RandomForce(), ForceMode.Impulse);
 	targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
 	transform.position = RandomSpawnPos();
+	gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     public Vector3 RandomForce()
@@ -38,6 +40,7 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
+	gameManager.UpdateScore(5);
 	Destroy(gameObject);
     }
 
