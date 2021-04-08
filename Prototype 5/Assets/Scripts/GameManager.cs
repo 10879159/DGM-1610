@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
-    public float spawnRate = 5.0f;
+    public float defaultSpawnRate = 5.0f;
     public TextMeshProUGUI scoreText;
     public float totalPopCount = 0.0f;
     public bool frenzy = false;
@@ -21,15 +21,19 @@ public class GameManager : MonoBehaviour
     public GameObject titleScreen;
 
     private int score;
+    private float spawnRate;
+    private int difficultyForFrenzy;
 
     // Start is called before the first frame update
     void Start()
     {
-
+	
     }
 
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
+	difficultyForFrenzy = difficulty;
+	spawnRate = defaultSpawnRate / difficulty;
         StartCoroutine(SpawnTarget());
 	score = 0;
 	UpdateScore(0);
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
 	yield return new WaitForSeconds(frenzyLength);
 	totalPopCount = 0.0f;
-	spawnRate = 5.0f;
+	spawnRate = defaultSpawnRate / difficultyForFrenzy;
 	frenzy = false;
 	yield return new WaitForSeconds(5);
 	canGameOver = true;
