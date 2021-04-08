@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    public void StartGame()
+    {
         StartCoroutine(SpawnTarget());
 	score = 0;
 	UpdateScore(0);
