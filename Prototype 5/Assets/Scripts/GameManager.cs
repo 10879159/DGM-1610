@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public bool canGameOver = true;
     public bool gameOver = false;
+    public Button restartButton;
 
     private int score;
 
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
 	gameOverText.gameObject.SetActive(true);
+	restartButton.gameObject.SetActive(true);
 	gameOver = true;
     }
 
