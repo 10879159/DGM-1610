@@ -22,4 +22,9 @@ public class SpawnManager : MonoBehaviour
 		newBall.Invoke();
 	}
     }
+
+    public Transform FindBall()
+    {
+	return GameObject.Find("Ball(Clone)").transform;
+    }
 }

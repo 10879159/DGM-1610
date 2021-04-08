@@ -5,9 +5,7 @@ using UnityEngine.Events;
 
 public class FollowBallX : MonoBehaviour
 {
-    public UnityEvent newBall;
-    public GameObject spawnManager;
-    public SpawnManager spawnManagerScript;
+    private UnityEvent newBall;
 
     private Transform ballInfo;
 
@@ -21,12 +19,16 @@ public class FollowBallX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(ballInfo.position.x - transform.position.x, 0, 0);
+	if (ballInfo != null) {
+		transform.Translate(ballInfo.position.x - transform.position.x, 0, 0);
+	}
+	//Debug.Log(ballInfo.position.x);
+	Debug.Log("blerp");
     }
 
     public void FindBall()
     {
 	ballInfo = GameObject.Find("Ball(Clone)").transform;
-	Debug.Log("New Ball! I Follow!");
+	Debug.Log("I see the line");
     }
 }

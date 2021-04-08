@@ -141,7 +141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &47943259
 MonoBehaviour:
@@ -160,7 +160,7 @@ MonoBehaviour:
   newBall:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 61795966}
+      - m_Target: {fileID: 0}
         m_MethodName: FindBall
         m_Mode: 1
         m_Arguments:
@@ -171,7 +171,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 396221570}
+      - m_Target: {fileID: 0}
+        m_MethodName: FindBallX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
         m_MethodName: FindBall
         m_Mode: 1
         m_Arguments:
@@ -182,7 +193,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 425356760}
+      - m_Target: {fileID: 0}
         m_MethodName: FindBall
         m_Mode: 1
         m_Arguments:
@@ -193,23 +204,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 466088754}
-        m_MethodName: FindBall
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1658589734}
-        m_MethodName: FindBall
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -305,7 +305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 7, z: 7}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &61795966
 MonoBehaviour:
@@ -493,7 +493,6 @@ GameObject:
   - component: {fileID: 294349890}
   - component: {fileID: 294349893}
   - component: {fileID: 294349892}
-  - component: {fileID: 294349891}
   m_Layer: 0
   m_Name: BottomZIndicator
   m_TagString: Untagged
@@ -515,21 +514,6 @@ Transform:
   m_Father: {fileID: 1611989564}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &294349891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294349889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 080587127192a4aca8192d7cabae033e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &294349892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -665,9 +649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74dd84d647af54f2b9a971af91e4315f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &425356758
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +660,6 @@ GameObject:
   - component: {fileID: 425356759}
   - component: {fileID: 425356762}
   - component: {fileID: 425356761}
-  - component: {fileID: 425356760}
   m_Layer: 0
   m_Name: TopXIndicator
   m_TagString: Untagged
@@ -701,21 +681,6 @@ Transform:
   m_Father: {fileID: 1611989564}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
---- !u!114 &425356760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425356758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74dd84d647af54f2b9a971af91e4315f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &425356761
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -772,7 +737,6 @@ GameObject:
   - component: {fileID: 466088753}
   - component: {fileID: 466088756}
   - component: {fileID: 466088755}
-  - component: {fileID: 466088754}
   m_Layer: 0
   m_Name: LeftXIndicator
   m_TagString: Untagged
@@ -794,21 +758,6 @@ Transform:
   m_Father: {fileID: 1611989564}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &466088754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466088752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74dd84d647af54f2b9a971af91e4315f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &466088755
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1179,7 +1128,6 @@ GameObject:
   - component: {fileID: 893212237}
   - component: {fileID: 893212240}
   - component: {fileID: 893212239}
-  - component: {fileID: 893212238}
   m_Layer: 0
   m_Name: LeftYIndicator
   m_TagString: Untagged
@@ -1201,21 +1149,6 @@ Transform:
   m_Father: {fileID: 1611989564}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
---- !u!114 &893212238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893212236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97bbb6afea134e5d9a25bea38c43bb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &893212239
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1293,7 +1226,7 @@ Transform:
   - {fileID: 1570316605}
   - {fileID: 228553891}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1570316604
 GameObject:
@@ -1397,7 +1330,6 @@ GameObject:
   - component: {fileID: 1595583222}
   - component: {fileID: 1595583225}
   - component: {fileID: 1595583224}
-  - component: {fileID: 1595583223}
   m_Layer: 0
   m_Name: RightYIndicator
   m_TagString: Untagged
@@ -1419,21 +1351,6 @@ Transform:
   m_Father: {fileID: 1611989564}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
---- !u!114 &1595583223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595583221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d837e61000f4044cf9f54a881d2d2e79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &1595583224
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1515,7 +1432,7 @@ Transform:
   - {fileID: 1595583222}
   - {fileID: 893212237}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658589732
 GameObject:
@@ -1528,7 +1445,6 @@ GameObject:
   - component: {fileID: 1658589733}
   - component: {fileID: 1658589736}
   - component: {fileID: 1658589735}
-  - component: {fileID: 1658589734}
   m_Layer: 0
   m_Name: RightXIndicator
   m_TagString: Untagged
@@ -1550,21 +1466,6 @@ Transform:
   m_Father: {fileID: 1611989564}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &1658589734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658589732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74dd84d647af54f2b9a971af91e4315f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &1658589735
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1621,7 +1522,6 @@ GameObject:
   - component: {fileID: 1936144640}
   - component: {fileID: 1936144643}
   - component: {fileID: 1936144642}
-  - component: {fileID: 1936144641}
   m_Layer: 0
   m_Name: TopZIndicator
   m_TagString: Untagged
@@ -1643,21 +1543,6 @@ Transform:
   m_Father: {fileID: 1611989564}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 180, y: 90, z: 0}
---- !u!114 &1936144641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936144639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 080587127192a4aca8192d7cabae033e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newBall:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &1936144642
 MeshRenderer:
   m_ObjectHideFlags: 0
