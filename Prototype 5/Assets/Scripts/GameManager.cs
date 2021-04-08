@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public List<GameObject> targets;
     public float spawnRate = 5.0f;
     public TextMeshProUGUI scoreText;
+    public float totalPopCount = 0.0f;
+    public bool frenzy = false;
+    public int frenzyThreshold = 20;
+    public float frenzyLength = 100.0f;
 
     private int score;
 
@@ -22,9 +26,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (totalPopCount > frenzyThreshold && !frenzy) {
+		spawnRate = 0.1f;
+		frenzy = true;
+		totalPopCount = 0.0f;
+		StartCoroutine(FrenzyTime());
+	}
     }
 
+    IEnumerator FrenzyTime()
+    {
+	yield return new WaitForSeconds(frenzyLength);
+	totalPopCount = 0.0f;
+	spawnRate = 5.0f;
+	frenzy = false;
+    }
     IEnumerator SpawnTarget()
     {
 	while (true) {

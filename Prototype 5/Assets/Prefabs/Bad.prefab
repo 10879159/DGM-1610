@@ -121,11 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3be6c8f865cd492f8f8cdd2daaeaae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 15
-  maxSpeed: 17
+  minSpeed: 10
+  maxSpeed: 15
   maxTorque: 10
   xRange: 4
-  ySpawnPos: -6
+  ySpawnPos: -1
   pointValue: -10
   explosion: {fileID: 4758139293545943008, guid: c7ad2532a6eeb40b59033c75e71fa054,
     type: 3}

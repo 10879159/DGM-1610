@@ -44,6 +44,7 @@ public class Target : MonoBehaviour
     {
 	gameManager.UpdateScore(pointValue);
 	Instantiate(explosion, transform.position, explosion.transform.rotation);
+	gameManager.totalPopCount++;
 	Destroy(gameObject);
     }
 
