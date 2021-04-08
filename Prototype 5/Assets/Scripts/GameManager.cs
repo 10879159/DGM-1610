@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float frenzyLength = 100.0f;
 
     private int score;
+    private bool canGameOver = true;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (totalPopCount > frenzyThreshold && !frenzy) {
+		canGameOver = false;
 		spawnRate = 0.1f;
 		frenzy = true;
 		totalPopCount = 0.0f;
@@ -40,7 +42,10 @@ public class GameManager : MonoBehaviour
 	totalPopCount = 0.0f;
 	spawnRate = 5.0f;
 	frenzy = false;
+	yield return new WaitForSeconds(5);
+	canGameOver = true;
     }
+
     IEnumerator SpawnTarget()
     {
 	while (true) {
