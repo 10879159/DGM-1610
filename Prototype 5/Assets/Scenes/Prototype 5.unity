@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &127505831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -490,6 +490,7 @@ MonoBehaviour:
   frenzy: 0
   frenzyThreshold: 10
   frenzyLength: 50
+  gameOverText: {fileID: 127505832}
 --- !u!4 &783553949
 Transform:
   m_ObjectHideFlags: 0

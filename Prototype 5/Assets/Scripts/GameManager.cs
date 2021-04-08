@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool frenzy = false;
     public int frenzyThreshold = 20;
     public float frenzyLength = 100.0f;
+    public TextMeshProUGUI gameOverText;
 
     private int score;
     private bool canGameOver = true;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+	gameOverText.gameObject.SetActive(true);
         StartCoroutine(SpawnTarget());
 	score = 0;
 	UpdateScore(0);
