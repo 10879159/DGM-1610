@@ -13,14 +13,14 @@ public class GameManager : MonoBehaviour
     public int frenzyThreshold = 20;
     public float frenzyLength = 100.0f;
     public TextMeshProUGUI gameOverText;
+    public bool canGameOver = true;
+    public bool gameOver = false;
 
     private int score;
-    private bool canGameOver = true;
 
     // Start is called before the first frame update
     void Start()
     {
-	gameOverText.gameObject.SetActive(true);
         StartCoroutine(SpawnTarget());
 	score = 0;
 	UpdateScore(0);
@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
 	}
     }
 
+    public void GameOver()
+    {
+	gameOverText.gameObject.SetActive(true);
+	gameOver = true;
+    }
+
     IEnumerator FrenzyTime()
     {
 	yield return new WaitForSeconds(frenzyLength);
@@ -50,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnTarget()
     {
-	while (true) {
+	while (!gameOver) {
 		yield return new WaitForSeconds(spawnRate);
 		int index = Random.Range(0, targets.Count);
 		Instantiate(targets[index]);

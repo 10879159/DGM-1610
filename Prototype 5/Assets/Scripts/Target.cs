@@ -45,11 +45,17 @@ public class Target : MonoBehaviour
 	gameManager.UpdateScore(pointValue);
 	Instantiate(explosion, transform.position, explosion.transform.rotation);
 	gameManager.totalPopCount++;
+	if (gameObject.CompareTag("Bad") && gameManager.canGameOver) {
+		gameManager.GameOver();
+	}
 	Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+	if (!gameObject.CompareTag("Bad") && gameManager.canGameOver) {
+		gameManager.GameOver();
+	}
 	Destroy(gameObject);
     }
 
