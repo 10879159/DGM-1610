@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -9,13 +9,15 @@ public class GameManagerX : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI timerText;
     public GameObject titleScreen;
-    public Button restartButton; 
+    public Button restartButton;
+    public float timeLeft = 60.0f;
 
     public List<GameObject> targetPrefabs;
 
     private int score;
-    private float spawnRate = 1.5f;
+    private float spawnRate = 3.0f;
     public bool isGameActive;
 
     private float spaceBetweenSquares = 2.5f; 
@@ -23,14 +25,28 @@ public class GameManagerX : MonoBehaviour
     private float minValueY = -3.75f; //  y value of the center of the bottom-most square
     
     // Start the game, remove title screen, reset score, and adjust spawnRate based on difficulty button clicked
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
-        spawnRate /= 5;
+        spawnRate /= difficulty;
         isGameActive = true;
         StartCoroutine(SpawnTarget());
+	StartCoroutine(RunTimer());
         score = 0;
         UpdateScore(0);
         titleScreen.SetActive(false);
+    }
+
+    IEnumerator RunTimer()
+    {
+	while (isGameActive)
+	{
+		yield return new WaitForSeconds(0.1f);
+		timeLeft -= 0.1f;
+		timerText.text = "Time: " + timeLeft;
+		if (timeLeft < 0.1) {
+			GameOver();
+		}
+	}
     }
 
     // While game is active spawn a random target
@@ -70,14 +86,14 @@ public class GameManagerX : MonoBehaviour
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        scoreText.text = "score";
+        scoreText.text = "Score: " + score;
     }
 
     // Stop game, bring up game over text and restart button
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(true);
         isGameActive = false;
     }
 
