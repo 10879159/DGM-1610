@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool canGameOver = true;
     public bool gameOver = false;
     public Button restartButton;
+    public GameObject titleScreen;
 
     private int score;
 
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnTarget());
 	score = 0;
 	UpdateScore(0);
+	titleScreen.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
