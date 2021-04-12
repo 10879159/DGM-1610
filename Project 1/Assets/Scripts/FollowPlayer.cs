@@ -12,7 +12,7 @@ public class FollowPlayer : MonoBehaviour
     }
 
     public GameObject player;
-    private Vector3 offset = new Vector3(0, 15, -15);
+    [SerializeField] Vector3 offset = new Vector3(0, 15, -15);
 
     // Update is called once per frame
     void Update()
