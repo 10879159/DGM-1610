@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2341126037959826258}
   - component: {fileID: 2341126037959826259}
-  - component: {fileID: 114673410743615792}
+  - component: {fileID: 114980723679906582}
   m_Layer: 0
   m_Name: BoneFollow
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2341126037959826256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: -10}
+  m_LocalPosition: {x: 0, y: 1.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6497309097143406623}
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
---- !u!114 &114673410743615792
+--- !u!114 &114980723679906582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2341126037959826256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Script: {fileID: 11500000, guid: a9686e652aada469fbf7114ed43ba77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2341126036901682276

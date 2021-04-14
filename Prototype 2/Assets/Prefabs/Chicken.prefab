@@ -1286,9 +1286,9 @@ GameObject:
   - component: {fileID: 895010382067922488}
   - component: {fileID: 895010382075612002}
   - component: {fileID: 895010381231656433}
+  - component: {fileID: 114692782952310370}
   - component: {fileID: 8094447603715060646}
-  - component: {fileID: 114227338441686998}
-  - component: {fileID: 114245704875585068}
+  - component: {fileID: 114725473714876452}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -1350,6 +1350,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+--- !u!114 &114692782952310370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895010382068277358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9686e652aada469fbf7114ed43ba77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &8094447603715060646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1363,7 +1375,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.5267563, y: 16.089905, z: 19.939995}
   m_Center: {x: -0.031047821, y: 7.979637, z: 1.2109146}
---- !u!114 &114227338441686998
+--- !u!114 &114725473714876452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1372,18 +1384,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 895010382068277358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Script: {fileID: 11500000, guid: a5b50b386d4dc44f69c14d074ca32e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114245704875585068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895010382068277358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  deathSpeed: 180

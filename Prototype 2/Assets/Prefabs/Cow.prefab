@@ -320,9 +320,9 @@ GameObject:
   - component: {fileID: 3405705104297813806}
   - component: {fileID: 3405705104306986018}
   - component: {fileID: 3405705105093738035}
+  - component: {fileID: 114479071351844550}
   - component: {fileID: 65512006326352904}
-  - component: {fileID: 114476079268828576}
-  - component: {fileID: 114195879458842516}
+  - component: {fileID: 114478415195977896}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Untagged
@@ -377,6 +377,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &114479071351844550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3405705104297300226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9686e652aada469fbf7114ed43ba77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &65512006326352904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -390,7 +402,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.173036, y: 26.70031, z: 46.377087}
   m_Center: {x: 0, y: 13.117861, z: 0.602346}
---- !u!114 &114476079268828576
+--- !u!114 &114478415195977896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -399,21 +411,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3405705104297300226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c52ee72091692143869a36cdefe1fd7, type: 3}
+  m_Script: {fileID: 11500000, guid: a5b50b386d4dc44f69c14d074ca32e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114195879458842516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405705104297300226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e62e9a8a22fac478a927ce940e28f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  deathSpeed: 180
 --- !u!1 &3405705104297300370
 GameObject:
   m_ObjectHideFlags: 0
