@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
 	playerRb.centerOfMass = centerOfMass.transform.position;
     }
 
+    public void Boingo()
+    {
+	playerRb.AddRelativeForce(Vector3.up * 100000000);
+	Debug.Log("Boingo!");
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
