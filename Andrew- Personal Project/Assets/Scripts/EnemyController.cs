@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public float enemySpeed = 10.0f;
+
     private Transform ballInfo;
 
     // Start is called before the first frame update
@@ -15,7 +17,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-	transform.Translate(0, ballInfo.position.y - transform.position.y, ballInfo.position.z - transform.position.z);
+	transform.Translate(0, Time.deltaTime * enemySpeed * (ballInfo.position.y - transform.position.y), Time.deltaTime * enemySpeed * (ballInfo.position.z - transform.position.z));
 	if (transform.position.y < 3.5f) {
 		transform.Translate(0, 3.5f - transform.position.y, 0);
 	} else if (transform.position.y > 46.5f) {

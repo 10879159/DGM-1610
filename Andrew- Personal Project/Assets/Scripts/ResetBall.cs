@@ -23,6 +23,7 @@ public class ResetBall : MonoBehaviour
 	if (Input.GetKeyDown("space") && ball.active == false) {
 		ball.active = true;
 		ball.transform.Translate(-ball.transform.position.x, 25 - ball.transform.position.y, -ball.transform.position.z);
+		ballScript.ballXSpeed = 1.0f;
 		ballScript.ballDirection = new Vector3(ballScript.ballXSpeed, Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
 	}
     }
