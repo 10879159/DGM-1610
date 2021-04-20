@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class FollowBallYLeft : MonoBehaviour
+public class FollowBallY : MonoBehaviour
 {
     public UnityEvent newBall;
 
@@ -19,7 +19,7 @@ public class FollowBallYLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(ballInfo.position.y - transform.position.y, 0, 0);
+        transform.Translate(transform.position.y - ballInfo.position.y, 0, 0);
     }
 
     public void FindBall()
