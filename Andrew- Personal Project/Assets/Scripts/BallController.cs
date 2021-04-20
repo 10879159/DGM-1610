@@ -7,10 +7,10 @@ public class BallController : MonoBehaviour
     public float speed = 10.0f;
     public float angleStrength = 8.0f;
     public float ballXSpeed = 1.0f;
+    public Vector3 ballDirection;
 
     private CharacterController ballMover;
-    private Vector3 ballDirection;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +41,7 @@ public class BallController : MonoBehaviour
 		ballDirection = new Vector3(ballDirection.x, -ballDirection.y, ballDirection.z);
 	} else if (collidee.gameObject.tag == "Player") {
 		ballDirection = new Vector3(-ballDirection.x, ballDirection.y, ballDirection.z);
+		ballXSpeed += 0.1f;
 	} else if (collidee.gameObject.tag == "Enemy") {
 		ballDirection = new Vector3(-ballDirection.x, ballDirection.y, ballDirection.z);
 	}
